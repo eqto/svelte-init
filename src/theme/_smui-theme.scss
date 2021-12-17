@@ -26,3 +26,8 @@ a:visited {
   color: color.scale(#40b3ff, $lightness: -35%);
 }
 
+.mdc-top-app-bar__title {
+  padding: 8px;
+  background-color: theme.$primary;
+  color: #fff;
+}
