@@ -1,7 +1,6 @@
 <script>
     import { goto } from "$app/navigation";
 
-    import Navbar from "$lib/components/Navbar.svelte";
     import { get } from "$lib/http";
     import { onMount } from "svelte";
 
@@ -23,6 +22,6 @@
 </script>
 
 {#if hasLogin}
-    <Navbar />
+    <!-- <Navbar /> -->
     <slot />
 {/if}

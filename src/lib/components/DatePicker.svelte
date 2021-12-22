@@ -25,22 +25,13 @@
         padding: 4px;
         text-align: center;
         width: 128px;
+        font-size: 1em;
     }
     div.date {
         margin: 4px 0;
         display: flex;
         flex-direction: row;
         align-items: center;
-        & > div {
-            margin: 0 4px;
-        }
-    }
-
-    div.filter {
-        display: flex;
-        margin-top: 16px;
-        flex-direction: row;
-        justify-content: center;
         & > div {
             margin: 0 4px;
         }

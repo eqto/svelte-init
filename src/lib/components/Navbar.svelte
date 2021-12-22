@@ -1,12 +1,11 @@
 <script lang="ts">
-    import TopAppBar, { Row, Section, Title } from "@smui/top-app-bar";
     import IconButton from "@smui/icon-button";
     import UploadButton from "./UploadButton.svelte";
     import DownloadButton from "./DownloadButton.svelte";
     import { goto } from "$app/navigation";
 </script>
 
-<TopAppBar variant="static" color="primary">
+<!-- <TopAppBar variant="static" color="primary">
     <Row>
         <Section>
             <Title>Sicepat Asuransi</Title>
@@ -16,4 +15,4 @@
             <UploadButton />
         </Section>
     </Row>
-</TopAppBar>
+</TopAppBar> -->

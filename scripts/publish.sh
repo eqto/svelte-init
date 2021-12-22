@@ -4,7 +4,7 @@
 
 #echo $PASSWORD
 
-UPLOADDIR='/home/apps/asuransi.vbotdigital.com'
+UPLOADDIR='/home/apps/asuransi.sicepatklik.com'
 
 scp -r -P 2222 build/* apps@logistik.app:$UPLOADDIR
 
