@@ -6,6 +6,7 @@
     let open: boolean = false;
 
     let files: File[] = [];
+    let uploading = false;
 
     function selectFile(ev) {
         const accepted = ev.detail.files.accepted;
@@ -13,6 +14,7 @@
             files = [...files, accepted[0]];
             const f: File = accepted[0];
             const xhr = new XMLHttpRequest();
+            uploading = true;
 
             xhr.upload.onprogress = (e) => {
                 console.log(e.loaded, e.total);
@@ -25,7 +27,6 @@
             fm.append("file", f.slice(0, f.size), f.name);
             xhr.send(fm);
         }
-        console.log(files);
     }
 </script>
 
@@ -33,7 +34,6 @@
     <Label>Upload</Label>
 </Button>
 
-<!-- <Dialog bind:open scrimClickAction="" escapeKeyAction=""> -->
 <Dialog bind:open>
     <Title>Upload</Title>
 
@@ -45,19 +45,23 @@
             on:filedrop={selectFile}
             accept=".xls, .xlsx, csv"
             fileLimit={1}
-            ><div class="drag-placeholder">
+            ><div class="drag-placeholder" class:uploading>
                 Drag file atau klik disini
             </div></FileDrop
         >
     </Content>
-    <Actions />
 </Dialog>
 
 <style lang="scss">
     .drag-placeholder {
+        margin-top: 16px;
         border: 1px solid #ccc;
         padding: 16px;
         border-radius: 8px;
+
+        &.uploading {
+            visibility: hidden;
+        }
     }
 
     .filename {
