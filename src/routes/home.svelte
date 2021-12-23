@@ -1,8 +1,9 @@
 <script lang="ts">
     import DatePicker from "$lib/components/DatePicker.svelte";
+    import DownloadMenu from "$lib/components/DownloadMenu.svelte";
+    import UploadButton from "$lib/components/UploadButton.svelte";
     import { post } from "$lib/http";
     import Button, { Label } from "@smui/button";
-    import DownloadButton from "$lib/components/DownloadButton.svelte";
 
     let items = [];
     let totalCount = 0;
@@ -48,11 +49,13 @@
         <div>
             <DatePicker bind:fromDate bind:untilDate />
         </div>
-        <Button variant="raised" on:click={search} color="secondary"
+        <Button variant="unelevated" on:click={search} color="secondary"
             ><Label>Search</Label></Button
         >
 
-        <DownloadButton />
+        <UploadButton />
+        <DownloadMenu bind:from={fromDate} bind:until={untilDate} />
+
         <div class="total">
             <div>Count: {totalCount}</div>
             <div>Quantity: {totalQuantity}</div>

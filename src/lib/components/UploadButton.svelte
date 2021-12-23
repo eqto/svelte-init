@@ -1,8 +1,7 @@
 <script lang="ts">
-    import IconButton from "@smui/icon-button";
     import Dialog, { Content, Actions, Title } from "@smui/dialog";
     import FileDrop from "filedrop-svelte";
-    import Tooltip, { Wrapper } from "@smui/tooltip";
+    import Button, { Label } from "@smui/button";
 
     let open: boolean = false;
 
@@ -30,15 +29,9 @@
     }
 </script>
 
-<Wrapper>
-    <IconButton
-        class="material-icons"
-        aria-label="Upload"
-        on:click={() => (open = true)}>file_upload</IconButton
-    >
-
-    <Tooltip xPos="start">Upload</Tooltip>
-</Wrapper>
+<Button variant="unelevated" color="secondary" on:click={() => (open = true)}>
+    <Label>Upload</Label>
+</Button>
 
 <!-- <Dialog bind:open scrimClickAction="" escapeKeyAction=""> -->
 <Dialog bind:open>
