@@ -170,7 +170,7 @@
 </div>
 
 <style lang="scss">
-    @import "../theme/color.scss";
+    @import "../theme/color";
 
     div.container {
         display: flex;
