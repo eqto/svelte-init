@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
+
     import DatePicker from "$lib/components/DatePicker.svelte";
     import DownloadMenu from "$lib/components/DownloadMenu.svelte";
     import UploadButton from "$lib/components/UploadButton.svelte";
@@ -85,6 +87,11 @@
             <div>Count: {totalCount}</div>
             <div>Quantity: {totalQuantity}</div>
             <div>Price: {totalPrice}</div>
+        </div>
+        <div class="logout">
+            <Button variant="unelevated" on:click={() => goto("/user/logout")}
+                ><Label>Logout</Label></Button
+            >
         </div>
     </div>
 
@@ -213,6 +220,13 @@
     div.content {
         margin-top: 54px;
         margin-bottom: 54px;
+    }
+
+    div.logout {
+        display: flex;
+        flex: 1;
+        justify-content: end;
+        padding-right: 8px;
     }
 
     div.footer {
